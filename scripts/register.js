@@ -15,11 +15,12 @@ let petSalon = {
 };
 
 //object contructor (function)
-function Pet(name, age, gender, breed) {
+function Pet(name, age, gender, breed, service) {
   this.name = name;
   this.age = age;
   this.gender = gender;
   this.breed = breed;
+  this.service = service;
 }
 
 function register() {
@@ -29,6 +30,7 @@ function register() {
   let inputAge = document.getElementById("txtAge").value;
   let inputGender = document.getElementById("txtGender").value;
   let inputBreed = document.getElementById("txtBreed").value;
+  let inputService = document.getElementById("txtService").value;
 
   //creating the object
   let newPet = new Pet(inputName, inputAge, inputGender, inputBreed);
@@ -39,9 +41,9 @@ function register() {
 }
 
 //creating pets using constructor
-let p1 = new Pet("Scooby", 60, "Male", "Dane");
-let p2 = new Pet("Foxy", 21, "Female", "Fox");
-let p3 = new Pet("Spot", 33, "Male", "Mixed");
+let p1 = new Pet("Scooby", 60, "Male", "Dane", "Wash");
+let p2 = new Pet("Foxy", 21, "Female", "Fox", "Wash");
+let p3 = new Pet("Spot", 33, "Male", "Mixed", "Nails");
 //pushing pets into the pets array
 petSalon.pets.push(p1, p2, p3);
 
