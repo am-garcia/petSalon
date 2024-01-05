@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
 <body>
@@ -18,9 +19,9 @@
             </h2>
             <div>
                 <label>
-                    Name:
+                    Name:*
                 </label>
-                <input type="text" id="txtName">
+                <input type="text" id="txtName" required>
             </div>
             <div>
                 <label>
@@ -42,15 +43,20 @@
             </div>
             <div>
                 <label>
-                    Service:
+                    Service:*
                 </label>
                 <input type="text" id="txtService">
             </div>
 
             <button onclick="register()">Register</button>
         </div>
+
+        <h2>Registered Pets</h2>
+        <div id="pets"></div>
+
     </main>
     <script src="./scripts/register.js"></script>
+    <script src="./scripts/display.js"></script>
 </body>
 
 </html>
