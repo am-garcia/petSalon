@@ -13,28 +13,38 @@ let petSalon = {
   },
   pets: [],
 };
+
 let counter = 0;
 //object contructor (function)
-function Pet(name, age, gender, breed, service) {
+function Pet(name, age, gender, breed, service, payment) {
   this.name = name;
   this.age = age;
   this.gender = gender;
   this.breed = breed;
   this.service = service;
+  this.payment = payment;
   this.id = counter++;
 }
 
 function isValid(aPet) {
   let validation = true;
-
+  $("input").removeClass("bg-red");
   if (aPet.name == "") {
     validation = false;
-    alert("Please add name");
+    // alert("Please add name");
+    $("#txtName").addClass("bg-red");
   }
 
   if (aPet.service == "") {
     validation = false;
-    alert("Please add service");
+    //alert("Please add service");
+    $("#txtService").addClass("bg-red");
+  }
+
+  if (aPet.payment == "") {
+    validation = false;
+    //alert("Please add payment");
+    $("#txtPayment").addClass("bg-red");
   }
 
   return validation;
@@ -48,6 +58,7 @@ function register() {
   let inputGender = document.getElementById("txtGender").value;
   let inputBreed = document.getElementById("txtBreed").value;
   let inputService = document.getElementById("txtService").value;
+  let inputPayment = document.getElementById("txtPayment").value;
 
   //creating the object
   let newPet = new Pet(
@@ -55,13 +66,39 @@ function register() {
     inputAge,
     inputGender,
     inputBreed,
-    inputService
+    inputService,
+    inputPayment
   );
   //push the object
-  if (isValid(newPet) == true) petSalon.pets.push(newPet);
-  //display the pets array in the console
-  // console.log(petSalon.pets);
-  displayPetCards();
+  if (isValid(newPet) == true) {
+    petSalon.pets.push(newPet);
+    //display the pets array in the console
+    // console.log(petSalon.pets);
+    displayPetCards();
+    $("input").val(""); //clears input after registration
+    showNotification(
+      "notifications",
+      "alert-success",
+      "Registration Successful"
+    );
+  } else {
+    showNotification(
+      "notifications",
+      "alert-danger",
+      "Please add all required fields"
+    );
+  }
+}
+
+function showNotification(id, styling, message) {
+  $("#" + id).removeClass("alert-success");
+  $("#" + id).removeClass("alert-danger");
+  $("#" + id)
+    .text(message)
+    .addClass(styling)
+    .fadeIn(300)
+    .delay(2000)
+    .slidUp(300);
 }
 
 function deletePet(petID) {
@@ -81,14 +118,17 @@ function deletePet(petID) {
 
 function init() {
   //creating pets using constructor
-  let p1 = new Pet("Scooby", 60, "Male", "Dane", "Wash");
-  let p2 = new Pet("Foxy", 21, "Female", "Fox", "Wash");
-  let p3 = new Pet("Spot", 33, "Male", "Mixed", "Nails");
+  let p1 = new Pet("Scooby", 60, "Male", "Dane", "Wash", "Cash");
+  let p2 = new Pet("Foxy", 21, "Female", "Fox", "Wash", "Card");
+  let p3 = new Pet("Spot", 33, "Male", "Mixed", "Nails", "Cash");
   //pushing pets into the pets array
   petSalon.pets.push(p1, p2, p3);
 
   //console.log(petSalon.pets);
   displayPetCards();
+
+  //hook events
+  $("#notifications").hide();
 }
 //waits for render the HTML
 window.onload = init;

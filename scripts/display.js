@@ -15,6 +15,7 @@ function displayPetCards() {
             <p>${pet.gender}</p>
             <p>${pet.breed}</p>
             <p>${pet.service}</p>
+            <p>${pet.payment}</p>
             <button onclick="deletePet(${pet.id})">🗑️</button>
         </div>
     </div>
