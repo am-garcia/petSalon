@@ -31,13 +31,14 @@ let counter = 0;
 // }
 
 //object contructor (function)
-function Pet(name, age, gender, breed, service, payment) {
+function Pet(name, age, gender, breed, service, payment, price) {
   this.name = name;
   this.age = age;
   this.gender = gender;
   this.breed = breed;
   this.service = service;
   this.payment = payment;
+  this.price = price;
   this.id = counter++;
 }
 
@@ -148,7 +149,7 @@ function deletePet(petID) {
 function addServices() {
   let services = readArray();
   for (let i = 0; i < services.length; i++) {
-    $("#textServices").append(
+    $("#txtService").append(
       `<option value="${services[i].description}">${services[i].description}</option>`
     );
   }
@@ -158,30 +159,30 @@ function init() {
   //creating pets using constructor
   let p1 = new Pet(
     "Scooby",
-    60,
+    6,
     "Male",
     "Dane",
-    "Wash",
+    "Grooming",
     "Cash",
-    getServicePrice("Shower")
+    getServicePrice("grooming")
   );
   let p2 = new Pet(
     "Foxy",
-    21,
+    2,
     "Female",
-    "Fox",
-    "Wash",
+    "Pomeranian",
+    "Wash Plus",
     "Card",
-    getServicePrice("Vaccine")
+    getServicePrice("wash pllus")
   );
   let p3 = new Pet(
     "Spot",
-    33,
+    3,
     "Male",
     "Mixed",
-    "Nails",
+    "Grooming",
     "Cash",
-    getServicePrice("Grooming")
+    getServicePrice("grooming")
   );
   //pushing pets into the pets array
   petSalon.pets.push(p1, p2, p3);

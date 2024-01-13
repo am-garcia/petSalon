@@ -34,7 +34,7 @@ function isValid(newService) {
   }
   if (newService.pricc == "") {
     validation = false;
-    $("txtPrice").addClass("bg-red");
+    $("#txtPrice").addClass("bg-red");
   }
   return validation;
 }

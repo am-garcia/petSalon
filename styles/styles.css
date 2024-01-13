@@ -11,6 +11,7 @@ header{
     margin-bottom: 50px;
 }
 body{
+    padding: 5px;
     background: url(https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/348257857_1432195304194458_1598730468570856445_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=IduXz4VTsksAX9AsPJE&_nc_ht=scontent-lax3-1.xx&oh=00_AfDLtlCNxtLcW6ZqivskmSAfkpFmOgkt2cwpyPdB-e4uMw&oe=65A737BF);
 }
 
@@ -55,6 +56,14 @@ body{
     text-align: center;
 }
 
+table th{
+    color:brown;
+}
 .table tr th{
     font-size: 20px;
+    background-color: burlywood;
+}
+
+.table td {
+    background-color: bisque;
 }

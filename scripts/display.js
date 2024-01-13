@@ -11,8 +11,9 @@ function displayPetCards() {
             <td>${pet.name}</td>
             <td>${pet.age}</td>
             <td>${pet.gender}</td>
-            <td>${pet.breed}</td>
             <td>${pet.service}</td>
+            <td>${pet.breed}</td>
+            
             <td>${pet.payment}</td>
             <td>${pet.price}</td>
             <td><button onclick="deletePet(${pet.id})">🗑️</button></td>
