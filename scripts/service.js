@@ -6,20 +6,6 @@ function Service(description, price) {
   this.price = price;
 }
 
-function isValid(newService) {
-  let validation = true;
-  $("input").removeClass("bg-red");
-  if (newService.description == "") {
-    validation = false;
-    $("#txtDescription").addClass("bg-red");
-  }
-  if (newService.pricc == "") {
-    validation = false;
-    $("txtPrice").addClass("bg-red");
-  }
-  return validation;
-}
-
 //create register function
 function register() {
   console.log("adding a new service");
@@ -39,14 +25,25 @@ function register() {
   console.log(services);
 }
 
+function isValid(newService) {
+  let validation = true;
+  $("input").removeClass("bg-red");
+  if (newService.description == "") {
+    validation = false;
+    $("#txtDescription").addClass("bg-red");
+  }
+  if (newService.pricc == "") {
+    validation = false;
+    $("txtPrice").addClass("bg-red");
+  }
+  return validation;
+}
+
 //create init function
 function init() {
-  let s1 = new Service("Grooming", 45);
+  let s1 = new Service("Grooming", 20);
   services.push(s1);
-  let s2 = new Service("Vaccine", 20);
-  services.push(s2);
-  let s3 = new Service("Training", 50);
-  services.push(s3);
+
   //hook events
   $("#btnRegister").on("click", register);
 }

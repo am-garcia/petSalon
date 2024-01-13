@@ -1,11 +1,60 @@
-/* cards */
-/* .card {
-    background-color: grey;
-    width: 300px;
-    margin: 10px;
-    padding: 5px;
-    box-shadow:auto;
-}  */
+*{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
 .bg-red{
     background-color: red;
+}
+
+header{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+body{
+    background: url(https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/348257857_1432195304194458_1598730468570856445_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=IduXz4VTsksAX9AsPJE&_nc_ht=scontent-lax3-1.xx&oh=00_AfDLtlCNxtLcW6ZqivskmSAfkpFmOgkt2cwpyPdB-e4uMw&oe=65A737BF);
+}
+
+.alert{
+    margin-left: 50px;
+    margin-right: 50px;
+
+}
+
+/* .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+} */
+
+
+.input-container{
+    padding: 5px;
+    display: flex;
+    
+    
+}
+
+.input-container label{
+    width: 180px;
+    padding: 10px;
+}
+
+.input-container input, .input-container textarea, .input-container select{
+    
+    padding: 5px;
+    border-radius: 50px;
+    width: 100%;
+}
+
+.input-container label{
+    font-size: 30px;
+}
+
+.btn-register{
+    text-align: center;
+}
+
+.table tr th{
+    font-size: 20px;
 }

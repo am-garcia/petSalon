@@ -41,27 +41,6 @@ function Pet(name, age, gender, breed, service, payment) {
   this.id = counter++;
 }
 
-function isValid(aPet) {
-  let validation = true;
-  $("input").removeClass("bg-red");
-  if (aPet.name == "") {
-    validation = false;
-    // alert("Please add name");
-    $("#txtName").addClass("bg-red");
-  }
-  if (aPet.service == "") {
-    validation = false;
-    //alert("Please add service");
-    $("#txtService").addClass("bg-red");
-  }
-  if (aPet.payment == "") {
-    validation = false;
-    //alert("Please add payment");
-    $("#txtPayment").addClass("bg-red");
-  }
-  return validation;
-}
-
 function register() {
   console.log("Registering");
   //get values from inputs
@@ -117,6 +96,28 @@ function getServicePrice(serviceDescription) {
   }
   return Number(price); // return the price
 }
+
+function isValid(aPet) {
+  let validation = true;
+  $("input").removeClass("bg-red");
+  if (aPet.name == "") {
+    validation = false;
+    // alert("Please add name");
+    $("#txtName").addClass("bg-red");
+  }
+  if (aPet.service == "") {
+    validation = false;
+    //alert("Please add service");
+    $("#txtService").addClass("bg-red");
+  }
+  if (aPet.payment == "") {
+    validation = false;
+    //alert("Please add payment");
+    $("#txtPayment").addClass("bg-red");
+  }
+  return validation;
+}
+
 function showNotification(id, styling, message) {
   $("#" + id).removeClass("alert-success");
   $("#" + id).removeClass("alert-danger");
@@ -130,9 +131,10 @@ function showNotification(id, styling, message) {
 
 function deletePet(petID) {
   //petSalon.pets.pop(petID);
+  document.getElementById(petID).remove(); //remove form HTML
   console.log("Deleting pet " + petID);
   let deleteIndex;
-  document.getElementById(petID).remove(); //remove form HTML
+
   for (let i = 0; i < petSalon.pets.length; i++) {
     // travel the array
     let pet = petSalon.pets[i]; // getting the current pet
@@ -161,7 +163,7 @@ function init() {
     "Dane",
     "Wash",
     "Cash",
-    getServicePrice("wash")
+    getServicePrice("Shower")
   );
   let p2 = new Pet(
     "Foxy",
@@ -170,7 +172,7 @@ function init() {
     "Fox",
     "Wash",
     "Card",
-    getServicePrice("vaccine")
+    getServicePrice("Vaccine")
   );
   let p3 = new Pet(
     "Spot",
@@ -179,7 +181,7 @@ function init() {
     "Mixed",
     "Nails",
     "Cash",
-    getServicePrice("nails")
+    getServicePrice("Grooming")
   );
   //pushing pets into the pets array
   petSalon.pets.push(p1, p2, p3);

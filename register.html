@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pet Salon</title>
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -15,58 +15,70 @@
     <header>
         <h1 id="title"></h1>
     </header>
+    <div class="alert alert-success" id="notifications">
+        <p>notifications will be here</p>
+    </div>
     <main class="container">
         <div>
             <h2>
                 Register Pet
             </h2>
-            <div class="alert alert-success" id="notifications">
-                <p>notifications will be here</p>
-            </div>
-            <div>
-                <label>
-                    Name:*
-                </label>
-                <input type="text" id="txtName" required>
-            </div>
-            <div>
-                <label>
-                    Age:
-                </label>
-                <input type="text" id="txtAge">
-            </div>
-            <div>
-                <label>
-                    Gender:
-                </label>
-                <input type="text" id="txtGender">
-            </div>
-            <div>
-                <label>
-                    Breed:
-                </label>
-                <input type="text" id="txtBreed">
-            </div>
-            <div>
-                <label>
-                    Service:*
-                </label>
-                <select type="text" id="txtService">
-                    <option>--Select a Service--</option>
-                </select>
-            </div>
-            <div>
-                <label>
-                    Payment:*
-                </label>
-                <input type="text" id="txtPayment">
-            </div>
-
+            <fieldset>
+                <div class="input-container">
+                    <label>
+                        Name:*
+                    </label>
+                    <input type="text" id="txtName" required>
+                </div>
+                <div class="input-container">
+                    <label>
+                        Age:
+                    </label>
+                    <input type="text" id="txtAge">
+                </div>
+                <div class="input-container">
+                    <label>
+                        Gender:
+                    </label>
+                    <input type="text" id="txtGender">
+                </div>
+                <div class="input-container">
+                    <label>
+                        Breed:
+                    </label>
+                    <input type="text" id="txtBreed">
+                </div>
+                <div class="input-container">
+                    <label>
+                        Service:*
+                    </label>
+                    <select type="text" id="txtService">
+                        <option>--Select a Service--</option>
+                    </select>
+                </div>
+                <div class="input-container">
+                    <label>
+                        Payment:*
+                    </label>
+                    <input type="text" id="txtPayment">
+                </div>
+            </fieldset>
             <button onclick="register()">Register</button>
         </div>
 
         <h2>Registered Pets</h2>
-        <div id="pets"></div>
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Service</th>
+                <th>Breed</th>
+                <th>Payment</th>
+                <th>Price</th>
+            </tr>
+            <tbody id="pets"></tbody>
+        </table>
 
     </main>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
